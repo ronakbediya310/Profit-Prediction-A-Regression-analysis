@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:hover,
+        .form-group select:hover {
+            border-color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Profit Prediction</h1>
+        <form action="{{url_for('predict_profit')}}" method="post">
+            <div class="form-group">
+                <label for="rd_spend">R&D Spend:</label>
+                <input type="text" id="rd_spend" name="rd_spend" placeholder="Enter R&D Spend">
+            </div>
+
+            <div class="form-group">
+                <label for="administration">Administration:</label>
+                <input type="text" id="administration" name="administration" placeholder="Enter Administration">
+            </div>
+
+            <div class="form-group">
+                <label for="marketing_spend">Marketing Spend:</label>
+                <input type="text" id="marketing_spend" name="marketing_spend" placeholder="Enter Marketing Spend">
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="New York">New York</option>
+                    <option value="California">California</option>
+                    <option value="Florida">Florida</option>
+           
+                </select>
+            </div>
+            
+
+            <button type="submit">Predict Profit</button>
+        </form>
+    </div>
+</body>
+</html>

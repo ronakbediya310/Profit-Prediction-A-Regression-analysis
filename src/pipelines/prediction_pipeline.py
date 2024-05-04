@@ -43,11 +43,10 @@ class CustomData:
     def get_data_as_dataframe(self):
         try:
             input_dict = {
-                'rd_spend': [self.rd_spend],
-                'administration':[self.administration],
-                'marketing_spend':[self.marketing_spend],
-                'state':[self.state]
-                
+                'R&D Spend': [self.rd_spend],
+                'Administration': [self.administration],
+                'Marketing Spend': [self.marketing_spend],
+                'State': [self.state]
             }
             df = pd.DataFrame(input_dict)
             print(df.head())
